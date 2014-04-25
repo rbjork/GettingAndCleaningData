@@ -21,11 +21,6 @@ trainData$activityCode <- trainLabels[,1]
 trainData$subjectCode <- subjectTrainLabels[,1]
 mergedTrainingData = merge(trainData, activityLabels,by.x="activityCode",by.y="activityCode",all=TRUE)
 
-dim(trainData)
-dim(trainLabels)
-head(trainData,1)
-str(trainData)
-
 testPath <- "./test/";
 subjectTestLabels <- read.table("./test/subject_test.txt")
 testLabels <- read.table(paste(testPath,"y_test.txt",sep=""),col.names=c("Activity"))

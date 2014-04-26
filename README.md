@@ -4,14 +4,14 @@
 
 The code begins by loading all the 'txt' files containing the values of computed features of sensor data and all the files that label the features(column names), activityLabels(maps activityCode of activity at time of measurement to activity name) and featureLabels which is the code of the activity that occurred at the time of measurement. Also is computed are the features giving the means and standard deviations values.
 Variable names in code:
-	* FeatureFile: files name containing list of features names in data set
-	* features: data.frame of features loaded from feature file above
-	* featureChar: this is the character vector conversion of features values
-	* desiredFeatures: the computed features that are means or standard deviations
-	* activityLabels: maps the six activity codes to 6 activity names.
-	* subjectTrainLabels: the subject code of the person from which the row feature data is recorded
-	* trainLabels: row values of activity labels
-	* trainData: data.frame containing the features values computed from sensor data
+* FeatureFile: files name containing list of features names in data set
+* features: data.frame of features loaded from feature file above
+* featureChar: this is the character vector conversion of features values
+* desiredFeatures: the computed features that are means or standard deviations
+* activityLabels: maps the six activity codes to 6 activity names.
+* subjectTrainLabels: the subject code of the person from which the row feature data is recorded
+* trainLabels: row values of activity labels
+* trainData: data.frame containing the features values computed from sensor data
 
 After trainData and labels are loaded the desired features(mean and std's) are selected from trainData using the desiredFeatures character vector, and trainData is reassigned to this reduced columns dataset.
 

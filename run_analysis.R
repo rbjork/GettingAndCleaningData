@@ -8,6 +8,7 @@ featureChar = as.character(features[,2]) # character vector of feature names
 
 # Assemble names of columns that have 'std' or 'mean' in them. These are the columns containing means and standard deviations of features
 # These are the name of the features which the assignment has requested be extracted ans assembled
+library(stringr)
 desiredFeatures <- str_detect(as.character(features[,2]),"(-std)|(-mean[^F])") 
 
 # Load in activity table that associates activityCode with activityName.
@@ -78,7 +79,20 @@ for(i in 1:NSubjects){
 }
 
 orderColumns <- append(c("Subject_Code","Activity_Name"),colNames[columnsToAvg])
+
+
 tidyData <- data.frame(meanActivityValues[,orderColumns])
+
+# Create more readable column headers
+colNames <- names(tidyData) # Clean heading names
+newColNames <- gsub("mean()"," mean ", colNames);
+newColNames <- gsub("std()"," std ", newColNames);
+newColNames <- gsub("[.]+","", newColNames);
+newColNames <- gsub("^[t]","", newColNames);
+newColNames <- gsub("^[f]","FFT ", newColNames);
+colnames(tidyData) <- newColNames
+
+
 #write.table(tidyData,file="tidy.txt")
 write.csv(tidyData,file="tidy.csv")
 

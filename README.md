@@ -34,5 +34,5 @@ After trainData and labels are loaded the desired features(mean and std's) are s
 ## outputing tidy data.
 	After all the means are computed the columns are reordered so that subject and and activity name are the first two columns of the data set.
 
-## Write out to 'csv' file
+## Write out to 'csv' file with improved names of column headers
 	The data set is written out to 'tidy.csv'.
